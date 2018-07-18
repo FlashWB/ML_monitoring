@@ -1,0 +1,137 @@
+:1,10s/xx/yy/g  将1-10行 中的xx换成yy
+
+
+plt.scatter()   散点图
+plt.plot()   画线图
+plt.xticks()  坐标轴
+plt.yticks()
+
+plt.show()   画图
+
+coef_ 存放回归系数
+
+
+鲁棒性： 健壮强壮， 在异常和危险情况下系统生存的关键
+
+常用回归函数
+1：线性回归
+2：岭回归: L2范数正则化 
+3：逻辑回归
+4：多项式回归
+5：逐步回归
+6：Lasso回归 ：l1范数先验正则项线性回归模型  估计稀疏线性模型
+7：ElasticNet回归: 弹性网络回归 l1和l2两个范数 非零稀疏模型
+
+sklearn中逻辑回归优化算法: liblinear; newton-cg; lbfgs; sag; saga
+
+##$$  岭回归和Lasso用到交叉验证来求得最优参数alpha
+##$$  惩罚项,对损失函数的一些参数进行限制
+##$$  L1正则化可以产生稀疏权值矩阵(很多元素为0),可用于特征选择
+##$$  L2正则化可以防止过拟合    
+
+# 标准化数据,保证每个维度的特征数据方差为1,均值为0,使得预测结果不会被某些过大的特征值而主导
+StandardScaler().fit_transform(X_train) #先拟合数据,再标准化
+
+CountVectorizer 统计词频信息
+
+
+TF-IDF处理使用：TfidfVectorizer类
+NLP库： jieba, nltk
+特征提取：sklearn.feature_extraction 
+# 打印系统所用编码方式
+import sys
+print sys.maxunicode 
+
+# python 内部内部是用unicode编码处理的
+# python 中 unicode编码可以任意转换为其他编码
+    b = a.unicode(a,)
+
+# python 用于存储的工具
+    列表（有序对象集合），元组，集合（无序不重复元素序列），字典（无序对象集合）
+    字典： 键(key):值(value)  对应对的集合
+    del list[2] 删除第3个元素
+    del dict['name'] 删除键 ‘name’
+    str(x) 将x变为字符串
+    chr(u)  ord(x)  编码转变 
+    获取unicode值str(ord(x))
+
+# python  计算
+    % 模；** 幂；//取整
+    成员运算符：in；  not in
+        if( a in list):
+    身份运算符：is     not is
+# python 迭代器 与生成器
+    it = iter(list)  
+    下一个元素next(it)
+
+# python 函数 
+    内部变量改变外部变量 使用global 变量 在内部声明
+    嵌套内的变量        使用nonlocal 变量 在内部声明
+
+# python 数据结构
+    列表可修改
+    字符串和无组不能修改
+    list.sort() 排序
+    list.append() 添加至尾
+    list.insert() 插入
+    list.count() 计数
+    可以将列表当做堆栈使用 .append()  .pop()
+    列表中可使用循环[f(x) for x in vec]  可实现矩阵变换
+    元组和序列总有括号
+    a[::-1]字符串倒序
+
+    列表推导式指定特定的键值对, 生成字典
+    word_dict = dict(zip(vocab, range(len(vocab)))) # 可以使用zip() 将数据打包成对在小括号内
+    >>>dict([('sape', 4139), ('guido', 4127), ('jack', 4098)]) 
+    {'sape': 4139, 'jack': 4098, 'guido': 4127}
+    >>> questions = ['name', 'quest', 'favorite color']
+    >>> answers = ['lancelot', 'the holy grail', 'blue']
+    >>> for q, a in zip(questions, answers):
+    ...     print('What is your {0}?  It is {1}.'.format(q, a))
+    ...
+    What is your name?  It is lancelot.
+    What is your quest?  It is the holy grail.
+    What is your favorite color?  It is blue.
+    使用enumerate 遍历，会提供index位置 和 对就值
+
+# python 模块
+    if __name__ == "__main__":
+        print('程序自身')     
+    else:
+        print('其他模块')
+
+    dir(模块名) 打印模块内所有定义     
+
+# python 输入输出
+    import math
+    在format()中使用关键字参数
+    >>> print('{name}网址： {site}'.format(name='菜鸟教程', site='www.runoob.com'))
+    菜鸟教程网址： www.runoob.com
+    str = input('请输入:')
+    num = eval(input("number"))
+    read() readline() readlines() write()
+    
+    f = open("/tmp/foo1.txt", "w") 
+    f.close
+    使用 with 可以不用f.close
+
+# python OS 处理文件和目录
+
+# python 错误和异常
+    while true:
+        try:
+            ....
+            break
+        except Error:
+            print ('Error')
+        except:
+            continue
+
+# pyton 字符串处理
+    str.lower() str.upper()
+    str.split(",")  ""
+    str
+
+# python 面向对象
+
+    
